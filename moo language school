@@ -1,0 +1,31 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+void result(){
+    int n,k;
+    cin>>n>>k;
+    string s;cin>>s;
+    int idx=n/k;
+    vector<bool> arr(idx,false);
+    for(int i=0;i<s.size();i++){
+        int ind=i/k;
+        if(s[i]=='0'){
+            arr[ind]=true;
+        }
+    }
+    int result=0;
+    for(int j=0;j<idx;j++){
+        if(!arr[j]){
+            result++;
+        }
+    }
+    cout<<result<<endl;
+}
+int main(){
+    int tc;
+    cin>>tc;
+    while(tc>0){
+        result();
+        tc--;
+    }
+}
